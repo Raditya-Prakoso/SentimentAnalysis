@@ -1,0 +1,5 @@
+Tautan untuk mengakses Google Colaboratory
+
+Final Project - Muhammad Raditya Prakoso (Full Stack Data Science Sanber Campus X ITB)
+
+https://colab.research.google.com/drive/12YraZzAG20ssXC7K0Lr3sW86w7YUfoF3?usp=sharing
