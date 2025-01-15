@@ -1,0 +1,50 @@
+import numpy as np
+import pandas as pd
+import seaborn as sns
+from matplotlib import pyplot as plt
+from wordcloud import WordCloud, STOPWORDS
+import PIL.Image
+
+# Word Cloud (General)
+text = open('hasil_TextPreProcessing_shopee.csv').read()
+
+plt.figure(figsize=(8,8))
+wc = WordCloud().generate(text)
+
+plt.imshow(wc, interpolation='bilinear')
+plt.axis('off')
+plt.show()
+
+plt.figure(figsize=(8, 8))
+wc_positif = WordCloud(width=800, height=800, background_color='white').generate(text)
+plt.imshow(wc_positif, interpolation='bilinear')
+plt.axis('off')
+plt.show()
+
+# Word Cloud (Positif)
+
+df = pd.read_csv('hasil_TextPreProcessing_shopee.csv')
+
+df_positive = df[df['Label'] == 'Positif']
+
+text = " ".join(df_positive['text_clean'].astype(str))
+
+plt.figure(figsize=(8, 8))
+wc_positif = WordCloud(width=800, height=800, background_color='white').generate(text)
+plt.imshow(wc_positif, interpolation='bilinear')
+plt.axis('off')
+plt.show()
+
+# Word Cloud (Negatif)
+
+df = pd.read_csv('hasil_TextPreProcessing_shopee.csv')
+
+df_positive = df[df['Label'] == 'Negatif']
+
+text = " ".join(df_positive['text_clean'].astype(str))
+
+plt.figure(figsize=(8, 8))
+wc_positif = WordCloud(width=800, height=800, background_color='white').generate(text)
+plt.imshow(wc_positif, interpolation='bilinear')
+plt.axis('off')
+plt.show()
